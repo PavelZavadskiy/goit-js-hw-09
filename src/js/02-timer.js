@@ -65,8 +65,12 @@ function convertMs(ms) {
 }
 
 function updateDisplay({ days, hours, minutes, seconds }) {
-  daysDisp.textContent = days.toString().padStart(2, '0');
-  hoursDisp.textContent = hours.toString().padStart(2, '0');
-  minutesDisp.textContent = minutes.toString().padStart(2, '0');
-  secondsDisp.textContent = seconds.toString().padStart(2, '0');
+  daysDisp.textContent = addLeadingZero(days);
+  hoursDisp.textContent = addLeadingZero(hours);
+  minutesDisp.textContent = addLeadingZero(minutes);
+  secondsDisp.textContent = addLeadingZero(seconds);
+}
+
+function addLeadingZero(value) {
+  return value.toString().padStart(2, '0');
 }
